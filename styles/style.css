@@ -463,49 +463,43 @@
     margin: 10px;
   }
 }*/
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   margin: 0 auto;
   font-family: var(--font);
   font-size: var(--font-size);
-  font-weight: 400;
-  line-height: 1.3;
   background-image: var(--backgroung-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: var(--bg-color, #000028);
 }
 
 /* Header */
 .header {
-  min-height: 100vh;
-  padding: 20px;
-  display: grid;
   position: relative;
+  display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  padding: 20px;
+  min-block-size: 100vh;
 }
 
 .header__theme-menu {
   justify-self: end;
-  align-self: center;
+  margin-block-start: 65px;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .header__theme-menu-button {
-  padding: 2px 13px;
-  color: var(--button-color);
-  background: transparent;
   border: 1px solid transparent;
+  padding: 0 13px;
+  inline-size: 70px;
+  block-size: 26px;
+  background: transparent;
+  color: var(--button-color);
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
@@ -521,7 +515,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--button-color);
+  border-block-end: 1px solid var(--button-color);
 }
 
 .header__theme-menu-button_active {
@@ -532,8 +526,8 @@
 /* Decorative elements */
 .decorative__element {
   position: absolute;
-  top: 20px;
-  right: 28px;
+  inset-block-start: 20px;
+  inset-inline-end: 28px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -543,8 +537,8 @@
 
 .decorative__element::after {
   content: "";
-  width: 9px;
-  height: 9px;
+  inline-size: 9px;
+  block-size: 9px;
   border-radius: 50%;
   background-color: var(--accent-color);
   filter: drop-shadow(0px 0px 4px var(--accent-color));
@@ -552,34 +546,34 @@
 
 .frame::before {
   position: absolute;
-  top: 20px;
-  right: 20px;
   content: "";
-  border-top: 1px solid var(--button-color);
-  border-right: 1px solid var(--button-color);
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--button-color);
+  border-block-start: 1px solid var(--button-color);
+  inset-inline-end: 20px;
+  inset-block-start: 20px;
 }
 
 .frame::after {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
   content: "";
-  border-bottom: 1px solid var(--button-color);
-  border-left: 1px solid var(--button-color);
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--button-color);
+  border-block-end: 1px solid var(--button-color);
+  inset-inline-start: 20px;
+  inset-block-end: 20px;
 }
 
 /* Header content */
 .header__title {
-  margin: 0;
-  text-shadow: 4px 4px 0 var(--accent-color);
-  font-size: var(--header-font-size);
   color: var(--title-color);
+  font-size: var(--header-font-size);
   font-weight: 700;
-  line-height: 0.825;
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-inline-start: -20px;
 }
 
 .title-decor {
@@ -589,49 +583,47 @@
 }
 
 .header__text {
-  max-width: 491px;
   justify-self: end;
   align-self: center;
-  margin: 0;
+  max-inline-size: 491px;
+  margin-block-start: 55px;
 }
 
-/* Main content sections */
+/* Main content */
 main {
   padding: 60px 20px;
 }
 
 .question__section__one,
 .question__section-two,
-.question__section__fhree,
-.question__section__image {
-  margin-bottom: 80px;
+.question__section__fhree {
+  margin-block-end: 80px;
 }
 
 .question__section-title {
   color: var(--button-color);
-  font-size: inherit;
   font-weight: 700;
-  margin-bottom: 20px;
+  font-size: inherit;
+  margin-block-end: 20px;
 }
 
 .question__section-answer-title {
-  margin: 0 0 10px 0;
-  font-size: inherit;
+  margin-block-end: 10px;
 }
 
 .question__section-answer-text {
   color: var(--text-color);
-  margin: 0 0 20px 0;
+  margin-block-end: 20px;
+  line-height: 23.4px;
 }
 
 .question__section-answer-link {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
-  color: inherit;
 }
 
 .question__section-answer-link:hover {
-  border-bottom: 1px solid var(--text-color);
+  border-block-end: 1px solid var(--text-color);
 }
 
 .question__section-answer-link:focus {
@@ -642,16 +634,16 @@ main {
   outline: 1px solid var(--text-color);
 }
 
-/* Section 1 - Why focus is hard */
+/* Section 1 - Grid layout */
 .question__section__one {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
 
-/* Section 2 - What reduces concentration */
+/* Section 2 - Cards layout */
 .question__section-title-two {
-  max-width: 315px;
+  max-inline-size: 315px;
 }
 
 .question__section-answer-two-container {
@@ -661,7 +653,7 @@ main {
 }
 
 .question__section-answer-title-two {
-  margin-bottom: 10px;
+  margin-block-end: 10px;
 }
 
 /* Section 3 - Advice */
@@ -671,19 +663,18 @@ main {
   gap: 20px;
 }
 
-.question__section-answer-fhree-container {
-  margin-bottom: 20px;
-}
-
 .question__section-answer-subtitle {
   font-weight: 400;
-  margin: 0 0 10px 0;
-  font-size: inherit;
+  margin-block-end: 10px;
 }
 
 /* Gallery */
+.question__section__image {
+  margin-block-end: 60px;
+}
+
 .question__section-title-image {
-  margin-bottom: 20px;
+  margin-block-end: 20px;
 }
 
 .question__section__image-container {
@@ -693,8 +684,8 @@ main {
 }
 
 .question__section__image-item {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -717,20 +708,20 @@ main {
 
 /* Footer */
 .footer {
-  min-height: 100vh;
-  padding: 20px;
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-block-size: 100vh;
+  padding: 20px;
 }
 
 .footer__title {
-  text-shadow: 4px 4px 0 var(--accent-color);
-  font-size: var(--footer-font-size);
   color: var(--title-color);
+  font-size: var(--footer-font-size);
   font-weight: 700;
-  line-height: 0.825;
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 /* Tablet */
@@ -740,22 +731,22 @@ main {
     --footer-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   
-  .header__theme-menu-list {
-    flex-direction: row;
-    justify-content: center;
-  }
-  
   .header__theme-menu {
     justify-self: center;
     align-self: start;
+    margin-block-start: 170px;
   }
   
-  .header__title {
-    margin-left: -20px;
+  .header__theme-menu-list {
+    flex-direction: row;
   }
   
   .question__section-title-two {
-    max-width: 236px;
+    max-inline-size: 236px;
+  }
+  
+  .header__text {
+    margin-block-start: 162px;
   }
 }
 
@@ -764,14 +755,16 @@ main {
   .header__theme-menu {
     justify-self: start;
     align-self: center;
+    margin-block-start: 0;
+    margin-inline-start: 20px;
   }
   
   .header__theme-menu-list {
     flex-direction: column;
   }
   
-  .question__section-answer-two-container {
-    grid-template-columns: repeat(3, 1fr);
+  .header__text {
+    margin-block-start: 114px;
   }
 }
 
@@ -789,11 +782,13 @@ main {
   .question__section-two,
   .question__section__fhree {
     display: block;
-    margin-bottom: 50px;
+    margin-block-end: 50px;
   }
   
   .question__section-answer-two-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
   
   .question__section__image-container {
@@ -802,22 +797,35 @@ main {
     gap: 10px;
   }
   
+  .header__title {
+    margin-inline-start: 0;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  
+  .footer__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  
   .decorative__element {
-    top: 10px;
-    right: 18px;
+    inset-block-start: 10px;
+    inset-inline-end: 18px;
   }
   
   .frame::before {
-    top: 10px;
-    right: 10px;
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
   }
   
   .frame::after {
-    bottom: 10px;
-    left: 10px;
+    inset-block-end: 10px;
+    inset-inline-start: 10px;
   }
   
-  .header__title {
-    margin-left: 0;
+  .header__theme-menu {
+    margin-block-start: 55px;
+  }
+  
+  .header__text {
+    margin-block-start: 55px;
   }
 }
