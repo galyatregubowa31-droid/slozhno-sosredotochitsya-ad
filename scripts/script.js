@@ -50,7 +50,7 @@ function setActiveButton(buttonsArray, theme) {
     autoButton.setAttribute('disabled', true);
   }
 }*/
-(function initTheme() {
+/*(function initTheme() {
   const theme = localStorage.getItem('theme');
   if (theme && theme !== 'auto') {
     setTheme(theme);
@@ -113,4 +113,67 @@ function setActiveButton(buttonsArray, theme) {
     autoButton.classList.add('header__theme-menu-button_active');
     autoButton.setAttribute('disabled', true);
   }
+}*/
+(function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme && savedTheme !== 'auto') {
+    setTheme(savedTheme);
+  } else {
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    setTheme(prefersLight ? 'light' : 'dark');
+    localStorage.setItem('theme', 'auto');
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themeButtons = document.querySelectorAll('.header__theme-menu-button');
+
+  const getCurrentTheme = () => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'auto' || !saved) {
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    return saved;
+  };
+
+  const currentTheme = getCurrentTheme();
+  setActiveButton(currentTheme);
+
+  themeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const type = [...button.classList].find(c => c.includes('_type_')).split('_type_')[1];
+
+      if (type === 'auto') {
+        document.documentElement.className = '';
+        localStorage.setItem('theme', 'auto');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        setActiveButton(prefersLight ? 'light' : 'dark');
+      } else {
+        setTheme(type);
+        setActiveButton(type);
+      }
+    });
+  });
+
+  function setActiveButton(theme) {
+    themeButtons.forEach(btn => {
+      btn.classList.remove('header__theme-menu-button_active');
+      btn.removeAttribute('disabled');
+    });
+
+    const activeBtn = document.querySelector(`.header__theme-menu-button_type_${theme}`);
+    if (activeBtn) {
+      activeBtn.classList.add('header__theme-menu-button_active');
+      activeBtn.setAttribute('disabled', true);
+    } else {
+      const autoBtn = document.querySelector('.header__theme-menu-button_type_auto');
+      autoBtn.classList.add('header__theme-menu-button_active');
+      autoBtn.setAttribute('disabled', true);
+    }
+  }
+});
+
+function setTheme(theme) {
+  document.documentElement.className = `theme-${theme}`;
+  localStorage.setItem('theme', theme);
 }
