@@ -34,13 +34,32 @@
   border: 1px solid rgba(255, 0, 112, 0.40);
 }*/
 
-:root.theme-dark {
+/*:root.theme-dark {
   --title-color: #DB00FF;
   --text-color: #F1B2CE;
   --sub-text-color: #000028;
   --accent-color: #ff0070;
   --button-color: #ff0070;
   --background-image: url(../images/cover-image-dark.png);
+}
+
+.theme-dark .decorative__element {
+  display: flex;
+}*/
+/*
+  Специально для тёмной темы при наличии класса,
+  здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
+
+:root.theme-dark {
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --sub-text-color: #000028;
+  --accent-color: #ff0070;
+  --button-color: #ff0070;
+  --button-color-hover: rgba(255, 0, 112, 0.4);
+  --backgroung-image: url(../images/cover-image-dark.png);
 }
 
 .theme-dark .decorative__element {
