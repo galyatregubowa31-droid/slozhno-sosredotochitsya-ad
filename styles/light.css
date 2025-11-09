@@ -110,6 +110,35 @@
   переключая тему
 */
 
+/*:root.theme-light {
+  --title-color: #FFC2E6;
+  --text-color: #353430;
+  --sub-text-color: #353430;
+  --accent-color: #FF8DCB;
+  --button-color: #353430;
+  --button-color-hover: rgba(50, 49, 45, 0.4);
+  --backgroung-image: url(../images/cover-image-light.png);
+}
+
+.theme-light .decorative__element {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --title-color: #FFC2E6;
+    --text-color: #353430;
+    --sub-text-color: #353430;
+    --accent-color: #FF8DCB;
+    --button-color: #353430;
+    --button-color-hover: rgba(50, 49, 45, 0.4);
+    --backgroung-image: url(../images/cover-image-light.png);
+  }
+  
+  .decorative__element {
+    display: none;
+  }
+}*/
 :root.theme-light {
   --title-color: #FFC2E6;
   --text-color: #353430;
