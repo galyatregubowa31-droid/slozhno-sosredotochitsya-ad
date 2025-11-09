@@ -5,7 +5,7 @@
   --accent-color: #ff0070;
   --font: 'IBM Plex mono', sans-serif;
   --font-size: 18px;
-  --button-color: #ff0070;
+  --buttton-color:#ff0070;
   --background-image: url(../images/cover-image-dark.png);
   --header-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --footer-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
