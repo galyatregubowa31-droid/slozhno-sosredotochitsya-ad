@@ -1,23 +1,4 @@
-/*.page.theme_dark {
-  --title-color: #DB00FF;
-  --text-color: #F1B2CE;
-  --sub-text-color: #000028;
-  --accent-color: #ff0070;
-  --button-color:#ff0070;
-  --background-image: url(../images/cover-image-dark.png);
-}
-
-.theme_dark .decorative__element {
-  display: flex;
-}
-
-.theme_dark .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.40);
-}*/
-
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
-/*:root.theme-dark {
+:root.theme-dark {
   --title-color: #DB00FF;
   --text-color: #F1B2CE;
   --sub-text-color: #000028;
@@ -32,36 +13,5 @@
 
 .theme-dark .header__theme-menu-button:hover {
   border: 1px solid rgba(255, 0, 112, 0.40);
-}*/
-
-/*:root.theme-dark {
-  --title-color: #DB00FF;
-  --text-color: #F1B2CE;
-  --sub-text-color: #000028;
-  --accent-color: #ff0070;
-  --button-color: #ff0070;
-  --background-image: url(../images/cover-image-dark.png);
-}
-
-.theme-dark .decorative__element {
-  display: flex;
-}*/
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
-:root.theme-dark {
-  --title-color: #DB00FF;
-  --text-color: #F1B2CE;
-  --sub-text-color: #000028;
-  --accent-color: #ff0070;
-  --button-color: #ff0070;
-  --button-color-hover: rgba(255, 0, 112, 0.4);
-  --backgroung-image: url(../images/cover-image-dark.png);
-}
-
-.theme-dark .decorative__element {
-  display: flex;
+  transition: border 0.3s;
 }
