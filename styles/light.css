@@ -3,7 +3,7 @@
   --text-color: #353430;
   --sub-text-color: #353430;
   --accent-color: #ff8dcb;
-  --button-color: #353430;
+  --button-color:#353430;
   --background-image: url(../images/cover-image-light.png);
 }
 
@@ -13,7 +13,6 @@
 
 .theme-light .header__theme-menu-button:hover {
   border: 1px solid rgba(50, 49, 45, 0.40);
-  transition: border 0.3s;
 }
 
 @media (prefers-color-scheme: light) {
@@ -22,8 +21,8 @@
     --text-color: #353430;
     --sub-text-color: #353430;
     --accent-color: #ff8dcb;
-    --button-color: #353430;
-    --background-image: url(../images/cover-image-light.png);
+    --button-color:#353430;
+    --backgroung-image: url(../images/cover-image-light.png);
   }
   .decorative__element {
     display: none;
@@ -31,6 +30,5 @@
   
   .header__theme-menu-button:hover {
     border: 1px solid rgba(50, 49, 45, 0.40);
-    transition: border 0.3s;
   }
 }  
