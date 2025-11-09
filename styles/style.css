@@ -26,7 +26,7 @@
 
 .header__theme-menu-button {
   padding: 0 13px;
-  color: var(--btn-color);
+  color: var(--button-color);
   text-align: center;
   border: none;
   background: transparent;
@@ -34,7 +34,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--btn-color);
+  border: 1px solid var(--button-color);
 }
 
 .header__theme-menu-button:focus {
@@ -42,7 +42,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--btn-color);
+  border-bottom: 1px solid var(--button-color);
 }
 
 .header__theme-menu-button:hover {
@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--btn-color);
+  color: var(--button-color);
   text-align: center;
   padding-right: 8px;
   text-transform: uppercase;
@@ -81,8 +81,8 @@
   top: 0;
   right: 0;
   content: "";
-  border-top: 1px solid var(--btn-color);
-  border-right: 1px solid var(--btn-color);
+  border-top: 1px solid var(--button-color);
+  border-right: 1px solid var(--button-color);
   inline-size: 25px;
   block-size: 25px;
   margin: 20px;
@@ -93,8 +93,8 @@
   bottom: 0;
   left: 0;
   content: "";
-  border-bottom: 1px solid var(--btn-color);
-  border-left: 1px solid var(--btn-color);
+  border-bottom: 1px solid var(--button-color);
+  border-left: 1px solid var(--button-color);
   inline-size: 25px;
   block-size: 25px;
   margin: 20px;
@@ -125,7 +125,7 @@
 }
 
 .question__section-title {
-  color: var(--btn-color);
+  color: var(--button-color);
   font-weight: 700;
   line-height: 23.4px; /* 130% */
   font-size: var(--font-size);
